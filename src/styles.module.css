@@ -1,9 +1,120 @@
 /* add css module styles here (optional) */
 
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
+@keyframes react-easy-notify-opened {
+  0% {
+    /* margin-right: 0px; */
+    transform: scale(0.8, 0.8);
+    opacity: 0;
+    /* display: block; */
+  }
+  35% {
+    transform: scale(1.1, 1.1);
+    opacity: 1;
+  }
+
+  65% {
+    transform: scale(0.9, 0.9);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+.react-easy-notify-opened {
+  animation: react-easy-notify-opened 500ms;
+  animation-fill-mode: forwards;
+}
+
+.react-easy-notify {
+  width: 250px;
+  margin-bottom: 5px;
+  position: relative;
+  /* position: absolute; */
+  /* top: 20px; */
+  /* right: 3px; */
+  /* display: none; */
+  /* opacity: 0; */
+  display: inline-block;
+  border-radius: 4px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.success {
+  background: rgb(70, 230, 123);
+}
+.danger {
+  background: rgb(216, 85, 46);
+}
+.warning {
+  background: rgb(233, 230, 86);
+}
+
+.react-easy-notify .react-easy-notify-header {
+  /* background: gray; */
+  padding: 4px 7px;
+  display: flex;
+}
+
+.react-easy-notify .react-easy-notify-header .title {
+  flex: 1;
+  text-transform: capitalize;
+}
+.react-easy-notify .react-easy-notify-header .close {
+  text-align: right;
+  background: red;
+  border-radius: 6px;
+  padding: 1px 4px;
+  cursor: pointer;
+  color: white;
+  transition: all ease-in-out 300ms;
+}
+.react-easy-notify .react-easy-notify-header .close:hover {
+  background: rgba(255, 0, 0, 0.849);
+}
+
+.react-easy-notify .react-easy-notify-body {
+  background: rgb(39, 39, 39);
+  padding: 10px;
+  text-align: justify;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* background: green; */
+  padding: 5px;
+  /* overflow: hidden; */
   text-align: center;
+  display: inline-grid;
+}
+
+.top-center {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  /* background: green; */
+  padding: 5px;
+  /* overflow: hidden; */
+  text-align: center;
+  display: inline-grid;
+  transform: translate(-50%);
+}
+.top-left {
+  position: absolute;
+  top: 10px;
+  left: 0%;
+  /* background: green; */
+  padding: 5px;
+  /* overflow: hidden; */
+  text-align: center;
+  display: inline-grid;
+  transform: translate(3%);
 }
