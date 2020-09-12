@@ -64,7 +64,7 @@ const options = {
   status: true,
   timeout: 5000,
   message: 'hi there, here is my awesome alert message',
-  position: 'top-right'
+  position: 'top-right',
   animationType: 'pops-up'
 }
 
@@ -74,11 +74,7 @@ const App = () => {
   }
   return (
     <div>
-      <button
-        onClick={callNot}
-      >
-        click me
-      </button>
+      <button onClick={callNot}>click me</button>
       <EasyNotify />
     </div>
   )
