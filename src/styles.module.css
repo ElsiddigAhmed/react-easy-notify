@@ -2,10 +2,8 @@
 
 @keyframes react-easy-notify-opened {
   0% {
-    /* margin-right: 0px; */
     transform: scale(0.8, 0.8);
     opacity: 0;
-    /* display: block; */
   }
   35% {
     transform: scale(1.1, 1.1);
@@ -32,11 +30,6 @@
   width: 250px;
   margin-bottom: 5px;
   position: relative;
-  /* position: absolute; */
-  /* top: 20px; */
-  /* right: 3px; */
-  /* display: none; */
-  /* opacity: 0; */
   display: inline-block;
   border-radius: 4px;
   overflow: hidden;
@@ -54,7 +47,6 @@
 }
 
 .react-easy-notify .react-easy-notify-header {
-  /* background: gray; */
   padding: 4px 7px;
   display: flex;
 }
@@ -89,9 +81,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  /* background: green; */
   padding: 5px;
-  /* overflow: hidden; */
   text-align: center;
   display: inline-grid;
 }
@@ -100,9 +90,7 @@
   position: absolute;
   top: 10px;
   left: 50%;
-  /* background: green; */
   padding: 5px;
-  /* overflow: hidden; */
   text-align: center;
   display: inline-grid;
   transform: translate(-50%);
@@ -111,10 +99,37 @@
   position: absolute;
   top: 10px;
   left: 0%;
-  /* background: green; */
   padding: 5px;
-  /* overflow: hidden; */
   text-align: center;
   display: inline-grid;
   transform: translate(3%);
+}
+
+.bottom-center {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  padding: 5px;
+  text-align: center;
+  display: inline-grid;
+  transform: translate(-50%);
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 10px;
+  left: 0%;
+  padding: 5px;
+  text-align: center;
+  display: inline-grid;
+  transform: translate(3%);
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px;
+  text-align: center;
+  display: inline-grid;
 }

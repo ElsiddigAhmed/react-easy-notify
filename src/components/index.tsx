@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import * as React from 'react'
 import ReactDOM from 'react-dom'
 import styles from '../styles.module.css'
@@ -39,12 +40,26 @@ export const Notification = ({
   )
 }
 
-export const hide = () => {
+export const hide = (props: Props) => {
   const root: any = document.getElementById('react-easy-notify-container')
+  root?.classList.remove(styles[`${props.position}`])
   ReactDOM.unmountComponentAtNode(root)
 }
 
-export const show = (props: Props) => {
-  const root: any = document.getElementById('react-easy-notify-container')
+export const show = (props: Props): boolean => {
+  const root = document.getElementById('react-easy-notify-container')
+  const timeout = props.timeout || 400
+
+  root?.classList.add(styles[`${props.position}`])
+
   ReactDOM.render(<Notification {...props} />, root)
+
+  if (timeout === -1) {
+    return false
+  }
+
+  setTimeout(() => {
+    hide(props)
+  }, props.timeout)
+  return true
 }
