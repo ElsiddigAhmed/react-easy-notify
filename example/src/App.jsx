@@ -8,7 +8,7 @@ const options = {
   type: 'success',
   title: 'success',
   status: true,
-  timeout: 90000,
+  timeout: 3000,
   message: 'hi there, here is my awesome alert message',
   position: 'top-right'
 }
@@ -58,6 +58,7 @@ const App = () => {
           <option>fade-in</option>
           <option>slide-left</option>
           <option>slide-right</option>
+          <option>vibration</option>
         </select>
         <button onClick={callNot}>click me</button>
       </div>
