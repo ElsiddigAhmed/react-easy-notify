@@ -8,7 +8,7 @@ const options = {
   type: 'success',
   title: 'success',
   status: true,
-  timeout: 3000,
+  timeout: 90000,
   message: 'hi there, here is my awesome alert message',
   position: 'top-right'
 }
@@ -16,8 +16,9 @@ const options = {
 const App = () => {
   const [type, setType] = useState('success')
   const [position, setPosition] = useState('top-right')
+  const [animationType, setAnimationType] = useState('pops-up')
   const callNot = () => {
-    EasyNotify.notify({ ...options, type, position })
+    EasyNotify.notify({ ...options, type, position, animationType })
   }
   return (
     <div>
@@ -40,13 +41,23 @@ const App = () => {
           value={position}
           onChange={({ target }) => setPosition(target.value)}
         >
-          <option>Alert Type</option>
+          <option>Alert Position</option>
           <option>top-left</option>
           <option>top-right</option>
           <option>top-center</option>
           <option>bottom-left</option>
           <option>bottom-right</option>
           <option>bottom-center</option>
+        </select>
+        <select
+          value={animationType}
+          onChange={({ target }) => setAnimationType(target.value)}
+        >
+          <option>Alert Animation Type</option>
+          <option>pops-up</option>
+          <option>fade-in</option>
+          <option>slide-left</option>
+          <option>slide-right</option>
         </select>
         <button onClick={callNot}>click me</button>
       </div>

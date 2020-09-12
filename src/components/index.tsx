@@ -1,13 +1,14 @@
 /* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-vars */
 import * as React from 'react'
 import ReactDOM from 'react-dom'
 import styles from '../styles.module.css'
-// eslint-disable-next-line no-unused-vars
 import { Props } from '../types/default'
 
 export const Notification = ({
-  status,
+  status = true,
   position = 'top-right',
+  animationType = 'pops-up',
   ...props
 }: Props) => {
   return (
@@ -15,7 +16,7 @@ export const Notification = ({
       id='react-easy-notify'
       data-testid='react-easy-notify'
       className={`${styles['react-easy-notify']} ${styles[props.type]} ${
-        status && styles['react-easy-notify-opened']
+        status && styles[animationType]
       } `}
     >
       <div
