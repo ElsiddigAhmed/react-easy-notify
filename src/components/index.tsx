@@ -24,11 +24,11 @@ export const Notification = ({
         data-testid='react-easy-notify-header'
       >
         <div className={styles.title}>{props.title}</div>
-        {/* {!props.autoClose && (
+        {false && (
           <div className={styles.close} onClick={() => hide()}>
             <i className='fa fa-close' />
           </div>
-        )} */}
+        )}
       </div>
       <div
         dir='auto'
@@ -37,13 +37,26 @@ export const Notification = ({
       >
         <span data-testid='message'>{props.message}</span>
       </div>
+      <div className={styles['react-easy-notify-body-progress']} />
     </div>
   )
 }
 
-export const hide = (props: Props) => {
+const positions = [
+  'top-left',
+  'top-right',
+  'top-center',
+  'bottom-left',
+  'bottom-right',
+  'bottom-center'
+]
+
+export const hide = () => {
   const root: any = document.getElementById('react-easy-notify-container')
-  root?.classList.remove(styles[`${props.position}`])
+  // root?.classList.remove(styles[`${props.position}`])
+  positions.forEach((p) => {
+    root?.classList.remove(styles[p])
+  })
   ReactDOM.unmountComponentAtNode(root)
 }
 
@@ -60,7 +73,7 @@ export const show = (props: Props): boolean => {
   }
 
   setTimeout(() => {
-    hide(props)
+    hide()
   }, props.timeout)
   return true
 }

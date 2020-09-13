@@ -27,11 +27,9 @@
 }
 @keyframes fade-in {
   0% {
-    /* transform: scale(0.8, 0.8); */
     opacity: 0;
   }
   100% {
-    /* transform: scale(1, 1); */
     opacity: 1;
   }
 }
@@ -126,7 +124,7 @@
 }
 
 .react-easy-notify {
-  width: 250px;
+  width: 260px;
   margin-bottom: 5px;
   position: relative;
   display: inline-block;
@@ -136,17 +134,18 @@
 }
 
 .success {
-  background: rgb(70, 230, 123);
+  background: #28a745;
 }
 .danger {
-  background: rgb(216, 85, 46);
+  background: #bd2130;
 }
 .warning {
-  background: rgb(233, 230, 86);
+  background: #ffc107;
+  color: black;
 }
 
 .react-easy-notify .react-easy-notify-header {
-  padding: 4px 7px;
+  padding: 3px 7px;
   display: flex;
 }
 
@@ -171,9 +170,14 @@
   background: rgb(39, 39, 39);
   padding: 10px;
   text-align: justify;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   color: rgba(255, 255, 255, 0.87);
+}
+.react-easy-notify .react-easy-notify-body-progress {
+  height: 3px;
+  width: 100%;
+  background: white;
 }
 
 .top-right {
@@ -197,11 +201,10 @@
 .top-left {
   position: absolute;
   top: 25px;
-  left: 0%;
+  left: 25px;
   padding: 5px;
   text-align: center;
   display: inline-grid;
-  transform: translate(3%);
 }
 
 .bottom-center {
@@ -217,11 +220,10 @@
 .bottom-left {
   position: absolute;
   bottom: 25px;
-  left: 0%;
+  left: 25px;
   padding: 5px;
   text-align: center;
   display: inline-grid;
-  transform: translate(3%);
 }
 
 .bottom-right {
@@ -231,4 +233,8 @@
   padding: 5px;
   text-align: center;
   display: inline-grid;
+}
+
+.react-easy-notify-container {
+  z-index: 100000;
 }
