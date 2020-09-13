@@ -8,7 +8,7 @@ const options = {
   type: 'success',
   title: 'success',
   status: true,
-  timeout: 500000,
+  timeout: 5000,
   message: 'hi there, here is my awesome alert message',
   position: 'top-right'
 }
