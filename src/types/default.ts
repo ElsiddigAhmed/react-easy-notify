@@ -14,3 +14,9 @@ export interface Props {
     | 'slide-right'
     | 'vibration'
 }
+
+export interface Confirm {
+  text: string
+  buttonTitle?: string
+  callback: Function
+}

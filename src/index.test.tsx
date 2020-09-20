@@ -1,17 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import { EasyNotify } from './index'
+import { EasyNotify, notify } from './index'
 import { render } from '@testing-library/react'
-import { Props } from './types/default'
 
-const options: Props = {
+const options: any = {
   status: true,
   type: 'success',
   position: 'top-center',
   timeout: 5000,
   title: 'success',
   autoClose: false,
-  message: ''
+  message: 'something'
 }
 
 describe('EasyNotify', () => {
@@ -32,7 +31,7 @@ describe('EasyNotify', () => {
     const { getByTestId, getByText } = render(<EasyNotify />)
     const message =
       'should render react-easy-notify when calling notify function'
-    EasyNotify.notify({ ...options, message })
+    notify({ ...options, message })
 
     expect(getByTestId('message').textContent).toBe(message)
     expect(getByTestId('message').textContent).toBeDefined()
@@ -44,49 +43,49 @@ describe('EasyNotify', () => {
 
   it('alert window title should be success if title is success', () => {
     const { getByTestId } = render(<EasyNotify />)
-    EasyNotify.notify({ ...options, title: 'success' })
+    notify({ ...options, title: 'success' })
 
     expect(getByTestId('react-easy-notify-header').textContent).toBeDefined()
     expect(getByTestId('react-easy-notify-header').textContent).toBe('success')
   })
   it('alert window title should be warning if title is warning', () => {
     const { getByTestId } = render(<EasyNotify />)
-    EasyNotify.notify({ ...options, title: 'warning' })
+    notify({ ...options, title: 'warning' })
 
     expect(getByTestId('react-easy-notify-header').textContent).toBeDefined()
     expect(getByTestId('react-easy-notify-header').textContent).toBe('warning')
   })
   it('alert window title should be danger if title is danger', () => {
     const { getByTestId } = render(<EasyNotify />)
-    EasyNotify.notify({ ...options, title: 'danger' })
+    notify({ ...options, title: 'danger' })
 
     expect(getByTestId('react-easy-notify-header').textContent).toBeDefined()
     expect(getByTestId('react-easy-notify-header').textContent).toBe('danger')
   })
   it('alert window title should be تحذير if title is تحذير', () => {
     const { getByTestId } = render(<EasyNotify />)
-    EasyNotify.notify({ ...options, title: 'تحذير' })
+    notify({ ...options, title: 'تحذير' })
 
     expect(getByTestId('react-easy-notify-header').textContent).toBeDefined()
     expect(getByTestId('react-easy-notify-header').textContent).toBe('تحذير')
   })
   it('alert window title should be خطاء if title is خطاء', () => {
     const { getByTestId } = render(<EasyNotify />)
-    EasyNotify.notify({ ...options, title: 'خطاء' })
+    notify({ ...options, title: 'خطاء' })
 
     expect(getByTestId('react-easy-notify-header').textContent).toBeDefined()
     expect(getByTestId('react-easy-notify-header').textContent).toBe('خطاء')
   })
   it('alert window title should be نجاح if title is نجاح', () => {
     const { getByTestId } = render(<EasyNotify />)
-    EasyNotify.notify({ ...options, title: 'نجاح' })
+    notify({ ...options, title: 'نجاح' })
 
     expect(getByTestId('react-easy-notify-header').textContent).toBeDefined()
     expect(getByTestId('react-easy-notify-header').textContent).toBe('نجاح')
   })
   it('alert message should be from right to left if language is arabic', () => {
     const { getByTestId } = render(<EasyNotify />)
-    EasyNotify.notify({ ...options, message: 'نجاح', title: 'نجاح' })
+    notify({ ...options, message: 'نجاح', title: 'نجاح' })
     expect(getByTestId('react-easy-notify-body').dir).toBe('auto')
   })
 })

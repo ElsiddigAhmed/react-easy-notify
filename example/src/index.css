@@ -6,11 +6,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(48, 49, 49);
 }
 
 html {
-  background: rgb(48, 49, 49);
+  background-image: url('./img/1.jpg');
+  background-size: cover;
 }
 
 code {
@@ -36,11 +36,8 @@ code {
   margin: 5px;
 }
 
-@media (max-with: 500px) {
-  /* .wrapper {
-    background: rgb(197, 190, 190);
-  } */
-  body {
-    background: green;
+@media (max-width: 500px) {
+  .wrapper {
+    width: 100%;
   }
 }

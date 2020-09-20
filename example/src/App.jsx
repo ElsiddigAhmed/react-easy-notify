@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { EasyNotify } from 'react-easy-notify'
-// import { Props } from 'react-easy-notify/dist/types/default'
+import { EasyNotify, notify, confirm } from 'react-easy-notify'
 import 'react-easy-notify/dist/index.css'
+
 import 'bootstrap/dist/css/bootstrap.css'
 const options = {
   type: 'success',
@@ -14,63 +14,23 @@ const options = {
 }
 
 const App = () => {
-  const position = (position) => {
-    EasyNotify.notify({ ...options, position })
-  }
   const type = (type) => {
-    EasyNotify.notify({ ...options, type })
+    notify({ ...options, type, title: type })
   }
   const animation = (animationType) => {
-    EasyNotify.notify({ ...options, animationType })
+    notify({ ...options, animationType })
+  }
+
+  const confirmation = () => {
+    confirm({
+      text: `hey there, this is my awesome confirmation window which can be used easy by just invoking one function`,
+      callback: () => alert('worked (^_^)')
+    })
   }
 
   return (
     <div className='text-center my-container'>
       <div className='wrapper'>
-        <div className='contents'>
-          <p>Choose Position</p>
-
-          <div>
-            <button
-              className='btn btn-primary m-1'
-              onClick={() => position('top-left')}
-            >
-              Top Left
-            </button>
-            <button
-              className='btn btn-primary m-1'
-              onClick={() => position('top-center')}
-            >
-              Top Center
-            </button>
-            <button
-              className='btn btn-primary m-1'
-              onClick={() => position('top-right')}
-            >
-              Top Right
-            </button>
-          </div>
-          <div>
-            <button
-              className='btn btn-primary m-1'
-              onClick={() => position('bottom-left')}
-            >
-              Bottom Left
-            </button>
-            <button
-              className='btn btn-primary m-1'
-              onClick={() => position('bottom-center')}
-            >
-              Bottom Center
-            </button>
-            <button
-              className='btn btn-primary m-1'
-              onClick={() => position('bottom-right')}
-            >
-              Bottom Right
-            </button>
-          </div>
-        </div>
         {/* alert types*/}
         <div className='contents'>
           <p>Choose Alert Type</p>
@@ -89,6 +49,9 @@ const App = () => {
           </button>
           <button className='btn btn-danger m-1' onClick={() => type('danger')}>
             Danger
+          </button>
+          <button className='btn btn-secondary m-1' onClick={confirmation}>
+            Confirm
           </button>
         </div>
 
