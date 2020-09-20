@@ -9,8 +9,7 @@ body {
 }
 
 html {
-  background-image: url('./img/1.jpg');
-  background-size: cover;
+  background: rgb(48, 49, 49);
 }
 
 code {

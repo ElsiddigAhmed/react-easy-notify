@@ -1,8 +1,15 @@
 # react-easy-notify
 
-> A React Library For Notifications;
+> A React Library For Notifications
 
 [![NPM](https://img.shields.io/npm/v/react-easy-notify.svg)](https://www.npmjs.com/package/react-easy-notify) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+## Introduction
+
+This is a notification library for making fast, easy to use and lightweight alert window. There are two types of notifications:
+
+- alert window.
+- confirmation window.
 
 ## Install
 
@@ -12,50 +19,16 @@ npm install --save react-easy-notify
 
 ## Demo
 
-[see demo](https://react-easy-notify.netlify.app)
+[see demo https://react-easy-notify.netlify.app](https://react-easy-notify.netlify.app)
 
 ## Usage
 
-### Typescript
-
-```tsx
-import React from 'react'
-
-import { EasyNotify } from 'react-easy-notify'
-import { Props } from 'react-easy-notify/dist/types/default'
-import 'react-easy-notify/dist/index.css'
-
-const options: Props = {
-  type: 'success',
-  title: 'success',
-  status: true,
-  timeout: 5000,
-  message: 'hi there, here is my awesome alert message',
-  position: 'top-right',
-  animationType: 'pops-up'
-}
-
-const App = () => {
-  const callNot = () => {
-    EasyNotify.notify(options)
-  }
-  return (
-    <div>
-      <button onClick={callNot}>click me</button>
-      <EasyNotify />
-    </div>
-  )
-}
-
-export default App
-```
-
-### Javascript
+### How to use the notify
 
 ```jsx
 import React from 'react'
 
-import { EasyNotify } from 'react-easy-notify'
+import { EasyNotify, notify } from 'react-easy-notify'
 import 'react-easy-notify/dist/index.css'
 
 const options = {
@@ -69,12 +42,39 @@ const options = {
 }
 
 const App = () => {
-  const callNot = () => {
-    EasyNotify.notify(options)
-  }
   return (
     <div>
-      <button onClick={callNot}>click me</button>
+      <button onClick={() => notify(options)}>click me</button>
+      <EasyNotify />
+    </div>
+  )
+}
+
+export default App
+```
+
+### How to use the confirm
+
+confirm provides a callback function, it can be used with cookies or similar things
+here is an example
+
+```jsx
+import React from 'react'
+
+import { EasyNotify, confirm } from 'react-easy-notify'
+import 'react-easy-notify/dist/index.css'
+
+const options = {
+  text: 'your message or text here',
+  callback: function () {
+    // will run after confirming
+  }
+}
+
+const App = () => {
+  return (
+    <div>
+      <button onClick={() => confirm(options)}>click me</button>
       <EasyNotify />
     </div>
   )
