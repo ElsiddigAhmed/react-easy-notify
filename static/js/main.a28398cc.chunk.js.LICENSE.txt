@@ -1,8 +1,8 @@
 /*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
+  object-assign
+  (c) Sindre Sorhus
+  @license MIT
+  */
 
 /** @license React v0.19.1
  * scheduler-tracing.production.min.js
