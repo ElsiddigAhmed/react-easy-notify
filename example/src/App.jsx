@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { EasyNotify, notify, confirm } from 'react-easy-notify'
+import { notify, confirm, ReactEasyNotify, Modal } from 'react-easy-notify'
 import 'react-easy-notify/dist/index.css'
-
 import 'bootstrap/dist/css/bootstrap.css'
 const options = {
   type: 'success',
@@ -14,6 +13,7 @@ const options = {
 }
 
 const App = () => {
+  const [status, setModalStatus] = useState(false)
   const type = (type) => {
     notify({ ...options, type, title: type })
   }
@@ -30,6 +30,11 @@ const App = () => {
 
   return (
     <div className='text-center my-container'>
+      <Modal status={status} onHide={() => setModalStatus(false)}>
+        <div style={{ textAlign: 'center', padding: 10 }}>
+          <h1>hello world</h1>
+        </div>
+      </Modal>
       <div className='wrapper'>
         {/* alert types*/}
         <div className='contents'>
@@ -52,6 +57,12 @@ const App = () => {
           </button>
           <button className='btn btn-secondary m-1' onClick={confirmation}>
             Confirm
+          </button>
+          <button
+            className='btn btn-secondary m-1'
+            onClick={() => setModalStatus(true)}
+          >
+            Modal
           </button>
         </div>
 
@@ -91,7 +102,7 @@ const App = () => {
           </button>
         </div>
       </div>
-      <EasyNotify />
+      <ReactEasyNotify />
     </div>
   )
 }
