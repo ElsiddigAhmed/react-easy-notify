@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 
-import { notify, confirm, ReactEasyNotify, Modal } from 'react-easy-notify'
+import {
+  notify,
+  confirm,
+  ReactEasyNotify,
+  Modal,
+  sweatNotify
+} from 'react-easy-notify'
 import 'react-easy-notify/dist/index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 const options = {
@@ -63,6 +69,17 @@ const App = () => {
             onClick={() => setModalStatus(true)}
           >
             Modal
+          </button>
+          <button
+            className='btn btn-primary m-1'
+            onClick={() =>
+              sweatNotify({
+                message:
+                  "hello world's alert, here is my sweat one for you , it's awesome, isn't it?"
+              })
+            }
+          >
+            Sweat
           </button>
         </div>
 
