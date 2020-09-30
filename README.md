@@ -23,12 +23,41 @@ npm install --save react-easy-notify
 
 ## Usage
 
+## Sweat Notify is Here
+
+you can now use a new theme of [react-easy-notify](https://react-easy-notify.netlify.app). SweatNotify is a lightweight fast and easy to use for simple notifications.
+
+## Code Snippet
+
+```jsx
+import React from 'react'
+import { ReactEasyNotify, sweatNotify } from 'react-easy-notify'
+import 'react-easy-notify/dist/index.css'
+
+const onClick = () => {
+  sweatNotify({
+    message:
+      "hello world's alert, here is my sweat one for you , it's awesome, isn't it?"
+  })
+}
+
+const App = () => {
+  return (
+    <div>
+      <ReactEasyNotify />
+      <button onClick={onClick}>sweat</button>
+    </div>
+  )
+}
+export default App
+```
+
 ### How to use the notify
 
 ```jsx
 import React from 'react'
 
-import { EasyNotify, notify } from 'react-easy-notify'
+import { ReactEasyNotify, notify } from 'react-easy-notify'
 import 'react-easy-notify/dist/index.css'
 
 const options = {
@@ -61,7 +90,7 @@ here is an example
 ```jsx
 import React from 'react'
 
-import { EasyNotify, confirm } from 'react-easy-notify'
+import { ReactEasyNotify, confirm } from 'react-easy-notify'
 import 'react-easy-notify/dist/index.css'
 
 const options = {
