@@ -1,4 +1,5 @@
 export { notify } from './components/notify'
 export { confirm } from './components/confirm'
 export { default as ReactEasyNotify } from './ReactEasyNotify'
-export { default as Modal } from './Modal'
+export { default as Modal } from './components/Modal'
+export { sweatNotify } from './components/sweat-notify'

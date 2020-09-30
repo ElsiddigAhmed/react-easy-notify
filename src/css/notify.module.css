@@ -181,7 +181,7 @@
 }
 
 .top-right {
-  position: absolute;
+  position: fixed;
   top: 25px;
   right: 25px;
   padding: 5px;
@@ -190,7 +190,7 @@
 }
 
 .top-center {
-  position: absolute;
+  position: fixed;
   top: 25px;
   left: 50%;
   padding: 5px;
@@ -199,7 +199,7 @@
   transform: translate(-50%);
 }
 .top-left {
-  position: absolute;
+  position: fixed;
   top: 25px;
   left: 25px;
   padding: 5px;
@@ -208,7 +208,7 @@
 }
 
 .bottom-center {
-  position: absolute;
+  position: fixed;
   bottom: 25px;
   left: 50%;
   padding: 5px;
@@ -218,7 +218,7 @@
 }
 
 .bottom-left {
-  position: absolute;
+  position: fixed;
   bottom: 25px;
   left: 25px;
   padding: 5px;
@@ -227,7 +227,7 @@
 }
 
 .bottom-right {
-  position: absolute;
+  position: fixed;
   bottom: 25px;
   right: 25px;
   padding: 5px;

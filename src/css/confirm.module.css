@@ -1,11 +1,13 @@
 .notification-wrapper {
   width: 350px;
   background: #ffffff;
-  position: absolute;
+  position: fixed;
   right: 15px;
   animation: fade-up;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
+  z-index: 100000;
+  box-shadow: 1px 1px 20px #3e3d3d46;
 }
 
 .hide {

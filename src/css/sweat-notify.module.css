@@ -1,0 +1,95 @@
+.sweat-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+}
+.sweat-notify {
+  position: relative;
+  margin-bottom: 10px;
+  background: white;
+  box-shadow: 0px 3px 10px 2px rgba(88, 88, 88, 0.151);
+  width: 400px;
+  display: flex;
+  margin-right: -30px;
+  animation: slide-sweat 300ms;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-sweat {
+  0% {
+    margin-right: -30px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0px;
+  }
+}
+
+.sweat-notify-reverse {
+  animation: slide-sweat-reverse 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-sweat-reverse {
+  0% {
+    margin-right: 0px;
+    opacity: 1;
+  }
+  100% {
+    margin-right: -30px;
+    opacity: 0;
+  }
+}
+
+.icon {
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  background: #28a745;
+  position: relative;
+  color: white;
+}
+
+.icon .icon-wrapper {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+}
+
+.sweat {
+  display: block;
+  padding: 2px;
+}
+
+.sweat .sweat-header {
+  display: flex;
+}
+
+.sweat .sweat-header * {
+  flex: 1;
+}
+.sweat .sweat-header:first-child {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.sweat .sweat-header .sweat-close {
+  text-align: right;
+  padding: 0px 10px;
+}
+
+.close-wrapper {
+  cursor: pointer;
+  width: 15px;
+  float: right;
+  color: rgba(146, 145, 145, 0.911);
+}
+
+.sweat .sweat-body {
+  text-align: left;
+  padding: 0px 5px 5px 5px;
+}

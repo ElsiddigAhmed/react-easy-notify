@@ -4,7 +4,13 @@ export interface Props {
   type: `success` | `warning` | `danger`
   timeout: number
   message: string
-  position?: `top-left` | `top-center` | `top-right`
+  position?:
+    | `top-left`
+    | `top-center`
+    | `top-right`
+    | `bottom-left`
+    | `bottom-center`
+    | `bottom-right`
   autoClose?: boolean
   title: 'warning' | 'success' | 'danger' | 'خطاء' | 'نجاح' | 'تحذير'
   animationType:
@@ -19,4 +25,9 @@ export interface Confirm {
   text: string
   buttonTitle?: string
   callback: Function
+}
+
+export interface SweatNotify {
+  message: string
+  type?: 'success'
 }

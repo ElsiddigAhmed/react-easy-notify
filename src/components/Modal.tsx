@@ -1,6 +1,6 @@
 import * as React from 'react'
-import styles from './css/modal.module.css'
-import { ReactComponent as Close } from './res/times-solid.svg'
+import styles from '../css/modal.module.css'
+import { ReactComponent as Close } from '../res/times-solid.svg'
 interface props {
   status: boolean
   children?: any
@@ -19,7 +19,7 @@ export default (props: props) => {
   }
 
   return props.status ? (
-    <div id='modal' className={`${styles.modal} `}>
+    <div id='modal' className={`${styles.modal} ${styles['generic-modal']}`}>
       <div className={styles.close} onClick={hideModal}>
         <Close />
       </div>

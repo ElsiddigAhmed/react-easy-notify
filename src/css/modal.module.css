@@ -1,28 +1,22 @@
 .modal {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  height: 400px;
-  background: rgb(255, 255, 255);
-  z-index: 999999;
-  border-radius: 8px;
   opacity: 0;
   animation: fade-up 400ms;
   animation-fill-mode: forwards;
 }
-
-.hide-modal {
-  position: absolute;
+.generic-modal {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: 45%;
   height: 400px;
   background: rgb(255, 255, 255);
   z-index: 999999;
   border-radius: 8px;
+  box-shadow: 1px 1px 20px #3e3d3d46;
+}
+
+.hide-modal {
   opacity: 1;
   animation: fade-out 400ms;
   animation-fill-mode: forwards;
@@ -30,7 +24,7 @@
 
 @keyframes fade-up {
   0% {
-    top: 45%;
+    top: 48%;
     opacity: 0;
   }
   100% {
@@ -45,17 +39,40 @@
     opacity: 1;
   }
   100% {
-    top: 45%;
+    top: 48%;
     opacity: 0;
   }
 }
 
 .close {
   position: absolute;
-  top: 7px;
-  right: 7px;
+  top: -27px;
+  right: -27px;
   width: 15px;
   height: 15px;
   color: gray;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  .generic-modal {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .generic-modal {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .generic-modal {
+    width: 95%;
+  }
+  .close {
+    position: absolute;
+    top: 3px;
+    right: 9px;
+  }
 }
